@@ -1,0 +1,36 @@
+{
+  "name": "weblog-frontend",
+  "version": "0.0.0",
+  "description": "weblog frontend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/csokt/weblog-frontend"
+  },
+  "keywords": [
+    "log"
+  ],
+  "author": "csokt",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/csokt/weblog-frontend/issues"
+  },
+  "homepage": "https://github.com/csokt/weblog-frontend",
+  "devDependencies": {
+    "gobble": "^0.7.9",
+    "gobble-browserify": "^0.2.0",
+    "gobble-concat": "^0.3.0",
+    "gobble-ractive": "^0.2.0",
+    "gobble-uglifyjs": "^0.2.1"
+  },
+  "dependencies": {
+    "autobahn": "^0.9.6",
+    "datatables": "^1.10.5",
+    "jquery": "^2.1.3",
+    "lodash": "^3.6.0",
+    "ractive": "^0.7.1"
+  }
+}

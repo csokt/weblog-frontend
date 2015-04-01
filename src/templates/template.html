@@ -1,0 +1,65 @@
+
+<button on-click='discover'>Reset</button> &nbsp;
+
+<select value='{{controls.domain}}'>
+  <option disabled> -- domain -- </option>
+  {{#each domains}}
+    <option>{{this}}</option>
+  {{/each}}
+</select>
+
+<select value='{{controls.host}}'>
+  <option disabled> -- host -- </option>
+  {{#each hosts}}
+    <option>{{this}}</option>
+  {{/each}}
+</select>
+
+<select value='{{controls.service}}'>
+  <option disabled> -- service -- </option>
+  {{#each services}}
+    <option>{{this}}</option>
+  {{/each}}
+</select>
+
+<select value='{{controls.fileind}}'>
+  <option disabled> -- file -- </option>
+  {{#each files:index}}
+    <option value={{index}}>{{this}}</option>
+  {{/each}}
+</select>
+
+&nbsp;&#124&nbsp;
+
+{{#if fieldsearch}}
+  <select value='{{controls.rangefield}}'>
+    <option disabled selected> -- range field -- </option>
+    {{#each controls.header.header:index}}
+      <option value={{index}}>{{this}}</option>
+    {{/each}}
+  </select>
+{{/if}}
+
+&nbsp;Kezd: <input value='{{controls.begin}}' type="search" size="10">
+&nbsp;Vég: <input value='{{controls.end}}' type="search" size="10">
+&nbsp;
+
+{{#if fieldsearch}}
+  <select value='{{controls.filterfield}}'>
+    <option disabled selected> -- filter field -- </option>
+    {{#each controls.header.header:index}}
+      <option value={{index}}>{{this}}</option>
+    {{/each}}
+  </select>
+{{/if}}
+
+&nbsp;Szűrő: <input value='{{controls.filter}}' type="search" size="10">
+&nbsp;&#124
+
+&nbsp;Indul: <input value='{{controls.offset}}' type="number" min="-1000" max="10000" step="100">
+&nbsp;Sorok: <input value='{{controls.count}}'  type="number" min="100"   max="10000" step="100">
+
+&nbsp;<button on-click='reload'>Beolvas</button>
+&nbsp;&#124
+
+&nbsp;Adatgyűjtés: <input type='checkbox' checked='{{controls.receive}}'>
