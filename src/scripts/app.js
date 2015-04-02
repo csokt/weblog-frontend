@@ -6,10 +6,13 @@
 
 // ######################################################################################################  Variables  ####
 
+AUTOBAHN_DEBUG = false
 var DEBUG = false
 var _ = require('lodash')
-var jQuery = require('jquery')
+jQuery = require('jquery')
 require('datatables')
+require('drmonty-datatables-tabletools')
+require('drmonty-datatables-plugins/integration/jqueryui/dataTables.jqueryui')
 var autobahn = require('autobahn')
 var wsuri         // the URL of the WAMP Router (Crossbar.io)
 var datatable     // jQuery DataTable object
