@@ -1,8 +1,8 @@
 /* global console */
-/* global jQuery */
-/* global _ */
-/* global autobahn */
-/* global Ractive */
+/* global jQuery:true */
+/* global require */
+/* global autobahn:true */
+/* global AUTOBAHN_DEBUG:true */
 
 // ######################################################################################################  Variables  ####
 
@@ -44,10 +44,8 @@ var setups = {}
 
 var Template = require('./template')
 
-//var ractive = new Ractive({
 var ractive = new Template({
   el: 'container',
-//  template: '#template',
   magic: true,
   data: model,
   computed: {
