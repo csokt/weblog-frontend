@@ -1,6 +1,6 @@
 {
   "name": "weblog-frontend",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "weblog frontend",
   "main": "index.js",
   "scripts": {
@@ -24,7 +24,6 @@
     "gobble": "^0.7.9",
     "gobble-browserify": "^0.2.0",
     "gobble-concat": "^0.3.0",
-    "gobble-concat-css": "0.0.2",
     "gobble-ractive": "^0.2.0",
     "gobble-uglifyjs": "^0.2.1"
   },
