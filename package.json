@@ -1,6 +1,6 @@
 {
   "name": "weblog-frontend",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "weblog frontend",
   "main": "index.js",
   "scripts": {
@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/csokt/weblog-frontend",
   "devDependencies": {
-    "gobble": "^0.7.10",
+    "gobble": "^0.7.13",
     "gobble-browserify": "^0.2.0",
     "gobble-concat": "^0.3.0",
     "gobble-ractive": "^0.2.0",

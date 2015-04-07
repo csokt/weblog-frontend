@@ -1,4 +1,6 @@
 
+{{#if isopen}}
+
 <button on-click='discover'>Reset</button> &nbsp;
 
 <select value='{{controls.domain}}'>
@@ -40,8 +42,8 @@
   </select>
 {{/if}}
 
-&nbsp;Kezd: <input value='{{controls.begin}}' type="search" size="10">
-&nbsp;Vég: <input value='{{controls.end}}' type="search" size="10">
+&nbsp;{{lang.begin}}: <input value='{{controls.begin}}' type="search" size="10">
+&nbsp;{{lang.end}}: <input value='{{controls.end}}' type="search" size="10">
 &nbsp;
 
 {{#if fieldsearch}}
@@ -53,13 +55,17 @@
   </select>
 {{/if}}
 
-&nbsp;Szűrő: <input value='{{controls.filter}}' type="search" size="10">
+&nbsp;{{lang.filter}}: <input value='{{controls.filter}}' type="search" size="10">
 &nbsp;&#124
 
-&nbsp;Indul: <input value='{{controls.offset}}' type="number" min="-1000" max="10000" step="100">
-&nbsp;Sorok: <input value='{{controls.count}}'  type="number" min="100"   max="10000" step="100">
+&nbsp;{{lang.offset}}: <input value='{{controls.offset}}' type="number" min="-1000" max="10000" step="100">
+&nbsp;{{lang.count}}: <input value='{{controls.count}}'  type="number" min="100"   max="10000" step="100">
 
-&nbsp;<button on-click='reload'>Beolvas</button>
+&nbsp;<button on-click='reload'>{{lang.reload}}</button>
 &nbsp;&#124
 
-&nbsp;Adatgyűjtés: <input type='checkbox' checked='{{controls.receive}}'>
+&nbsp;{{lang.receive}}: <input type='checkbox' checked='{{controls.receive}}'>
+
+{{else}}
+  Realm: <input value='{{realm}}' type="text">
+{{/if}}
