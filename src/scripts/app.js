@@ -33,7 +33,7 @@ var setups = {}   // Discovered services
 
 var model = {
   controls: _.clone(controldefaults),
-  realm: 'weblog',
+  password: '',
   isopen: false,
   servers: [],
   headers: [],
@@ -123,17 +123,17 @@ ractive.observe( 'controls.offset', function () {
 
 // ######################################################################################################  WAMP connection  ####
 
-ractive.observe( 'realm', function () {
+ractive.observe( 'password', function () {
 
-  //if (document.location.origin == 'file://') {
-  //   wsuri = 'ws://127.0.0.1:8080/ws'
-  //} else {
-  //   wsuri = (document.location.protocol === 'http:' ? 'ws:' : 'wss:') + '//' + document.location.host + '/ws'
-  //}
-  wsuri = 'ws://127.0.0.1:8080/ws'
+  if (document.location.origin == 'file://') {
+     wsuri = 'ws://127.0.0.1:8080/ws'
+  } else {
+     wsuri = (document.location.protocol === 'http:' ? 'ws:' : 'wss:') + '//' + document.location.hostname + ':8080/ws'
+  }
+
   connection = new autobahn.Connection({
      url: wsuri,
-     realm: model.realm
+     realm: 'weblog' + model.password
   })
 
   connection.onopen = function (session) {

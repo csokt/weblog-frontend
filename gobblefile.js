@@ -13,6 +13,6 @@ module.exports = gobble([
       dest: 'bundle.js',
       debug: true
     })
-//    .transform( 'uglifyjs' )
+    .transform( 'uglifyjs' )
 
 ])
