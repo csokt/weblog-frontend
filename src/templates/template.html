@@ -62,9 +62,11 @@
 &nbsp;{{lang.count}}: <input value='{{controls.count}}'  type="number" min="100"   max="10000" step="100">
 
 &nbsp;<button on-click='reload'>{{lang.reload}}</button>
-&nbsp;&#124
 
-&nbsp;{{lang.receive}}: <input type='checkbox' checked='{{controls.receive}}'>
+{{#if !fieldsearch}}
+  &nbsp;&#124
+  &nbsp;{{lang.receive}}: <input type='checkbox' checked='{{controls.receive}}'>
+{{/if}}
 
 {{else}}
   Password: <input value='{{password}}' type="password">

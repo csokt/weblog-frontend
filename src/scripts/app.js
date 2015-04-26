@@ -71,7 +71,7 @@ var ractive = new Template({
         return ''
       }
     },
-    fieldsearch: function () { return this.get('controls.header.view') ? true : false },
+    fieldsearch: function () { return this.get('controls.header.view') || this.get('controls.header.select') ? true : false },
   }
 })
 
