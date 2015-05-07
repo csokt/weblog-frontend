@@ -4,6 +4,7 @@
 /* global autobahn:true */
 /* global AUTOBAHN_DEBUG:true */
 /* global language */
+/* global realm */
 /* global controldefaults */
 /* global dtdefaults */
 /* global wlang */
@@ -133,7 +134,7 @@ ractive.observe( 'password', function () {
 
   connection = new autobahn.Connection({
      url: wsuri,
-     realm: 'weblog' + model.password
+     realm: realm + model.password
   })
 
   connection.onopen = function (session) {
