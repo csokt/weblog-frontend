@@ -5,6 +5,7 @@
 /* global AUTOBAHN_DEBUG:true */
 /* global language */
 /* global realm */
+/* global uidefaults */
 /* global controldefaults */
 /* global dtdefaults */
 /* global wlang */
@@ -33,6 +34,7 @@ var sub           // Current subscription
 var setups = {}   // Discovered services
 
 var model = {
+  ui: _.clone(uidefaults),
   controls: _.clone(controldefaults),
   password: '',
   isopen: false,
@@ -95,12 +97,13 @@ ractive.observe( 'topic', function ( topic ) {
 })
 
 ractive.observe( 'controls.fileind', function ( fileind ) {
-  model.controls.receive = fileind ? false : true
+//  model.controls.receive = fileind ? false : true
   if (fileind > 0 && model.controls.offset < 0) {
     model.controls.offset = 0
   }
   if (fileind > -1) {
     model.controls.header = model.headers[fileind]
+    reload()
   }
 })
 
@@ -161,6 +164,7 @@ var discover = function() {
   setups = {}
   model.servers = []
   model.headers = []
+  model.ui = _.clone(uidefaults)
   model.controls = _.clone(controldefaults)
 
   if (DEBUG) { console.log('discover started') }

@@ -3,6 +3,19 @@
 /* global wlang:true */
 /* global dtlang:true */
 
+uidefaults = {
+  controls: uicontrols,
+  reset: true,
+  topic: true,
+  file: true,
+  range: true,
+  filter: true,
+  offset: true,
+  count: true,
+  reload: true,
+  receive: true,
+}
+
 controldefaults = {
   domain: '',
   host: '',
@@ -55,7 +68,7 @@ dtdefaults = {
 //    pagingType: 'full_numbers',
 //  searchDelay: 400,
 //    order: [ 0, 'desc' ],
-  order: [[0, 'desc']],
+  order: [[0, 'asc']],
 //    renderer: 'bootstrap',
   stateSave: false,
   displayStart: 0,
